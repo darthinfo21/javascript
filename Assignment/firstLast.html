@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Return First and Last Name</title>
+    <script>
+        function getFormvalue() {
+            // Prevent form submission
+            event.preventDefault();
+ 
+            // Get the form element
+            const form = document.getElementById('form1');
+ 
+            // Retrieve the values of the first and last name
+            const firstName = form.elements['fname'].value;
+            const lastName = form.elements['lname'].value;
+ 
+            // Display the values
+            alert("First Name: " + firstName + "\nLast Name: " + lastName);
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" onsubmit="getFormvalue()">
+        First name: <input type="text" name="fname" value="David"><br>
+        Last name: <input type="text" name="lname" value="Beckham"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

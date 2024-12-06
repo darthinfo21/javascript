@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Lowest and Greatest Finder</title>
+    <script>
+        function findSecondLowestAndGreatest(arr) {
+            // Sort the array in ascending order
+            arr.sort((a, b) => a - b);
+ 
+            // Check if the array has enough elements
+            if (arr.length < 2) {
+                return "Array must have at least two elements!";
+            }
+ 
+            // Find the second lowest and second greatest numbers
+            const secondLowest = arr[1];
+            const secondGreatest = arr[arr.length - 2];
+ 
+            return [secondLowest, secondGreatest];
+        }
+ 
+        function displayResult() {
+            // Get the input array from the user
+            const input = document.getElementById('arrayInput').value;
+ 
+            // Convert the input string to an array of numbers
+            const array = input.split(',').map(Number);
+ 
+            // Check for valid input
+            if (array.some(isNaN)) {
+                document.getElementById('result').innerHTML = "Please enter a valid array of numbers.";
+                return;
+            }
+ 
+            // Call the function and get the results
+            const result = findSecondLowestAndGreatest(array);
+ 
+            // Display the results on the page
+            if (typeof result === "string") {
+                document.getElementById('result').innerHTML = result;
+            } else {
+                document.getElementById('result').innerHTML =
+                    "Second Lowest: " + result[0] + "<br>Second Greatest: " + result[1];
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Find Second Lowest and Second Greatest</h1>
+    <p>Enter an array of numbers (comma-separated):</p>
+    <input type="text" id="arrayInput">
+    <button onclick="displayResult()">Find Numbers</button>
+    <p id="result" style="font-weight: bold; color: green;"></p>
+</body>
+</html>

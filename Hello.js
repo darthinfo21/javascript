@@ -1,0 +1,1 @@
+document.write("<h3>JavaScript code written by Siddarth</h3>")

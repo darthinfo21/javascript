@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Clock</title>
+    <script>
+        function startClock() {
+            setInterval(() => {
+                const now = new Date();
+                const time = now.toLocaleTimeString(); // Get time in HH:MM:SS format
+
+                const timer= `${time}`;
+                const clock=document.getElementById('clock');
+                clock.innerHTML +=timer+"<br>";
+                
+            }, 1000);
+        }
+    </script>
+</head>
+<body onload="startClock()">
+    <h1>The time is..</h1>
+    <h2 id="clock"></h2>
+</body>
+</html>
